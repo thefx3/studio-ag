@@ -48,7 +48,7 @@
   align-items: center;
   border: 1px solid var(--color-blue-accent1);
   border-radius: 30px;
-  padding: 4px 12px;
+  padding: 2px 6px;
 
   transition: background-color 0.3s ease;
   transition: transform 0.3s ease;

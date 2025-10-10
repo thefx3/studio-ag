@@ -11,3 +11,14 @@ function Button({ text, to }) {
 }
 
 export default Button;
+
+
+function Button_contact ({ text, to }) {
+  return (
+    <Link to={to} className="nav-button contact-button">
+      {text}
+    </Link>
+  )
+}
+
+export { Button_contact };

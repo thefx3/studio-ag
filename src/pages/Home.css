@@ -23,23 +23,6 @@
         line-height: 1.4;
     }
 
-    .nav-button {
-        background-color: var(--color-blue-accent1);
-        color: var(--color-white);
-        font-size: clamp(0.8rem, 2vw, 1.25rem);
-        font-weight: 600;
-        padding: clamp(10px, 1.5vw, 20px) clamp(20px, 2.5vw, 30px);
-        border: none;
-        border-radius: 30px;
-        cursor: pointer;
-        width: fit-content;
-        transition: background-color 0.3s ease;
-
-        &:hover {
-            background-color: var(--color-blue-accent2);
-            color: var(--color-dark-accent1);
-        }
-    }
 }
 
 .space {
