@@ -1,0 +1,13 @@
+.nav-button {
+    background-color: transparent;
+    appearance: none;
+    text-decoration: none;
+    color: var(--color-white);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    line-height: auto;
+    border-radius: 25px;
+}
