@@ -4,10 +4,16 @@
     text-decoration: none;
     color: var(--color-white);
     border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
+
+    padding: clamp(6px, 1vw, 14px) clamp(12px, 2vw, 28px);
+
+    border-radius: clamp(12px, 2vw, 25px);
+  
     cursor: pointer;
-    font-size: 18px;
-    line-height: auto;
-    border-radius: 25px;
-}
+
+    font-size: clamp(0.9rem, 1.5vw, 1.25rem);
+    line-height: 1.2;
+    font-family: 'Inria Sans', sans-serif;
+
+    transition: all 0.25s ease;
+  }

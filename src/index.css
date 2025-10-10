@@ -20,6 +20,7 @@
   --color-dark-accent2: rgba(63, 53, 48, 1);
   --color-grey-accent1: rgba(174, 174, 174, 1);
 
+  --border-padding: 2vh 12vw; 
 }
 
 @font-face {
