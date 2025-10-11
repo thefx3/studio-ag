@@ -4,7 +4,7 @@ hr {
     border: none;
     width: 100%;
     border-top: 1px solid var(--color-dark-accent2);
-    margin: 5vh 0;
+    margin: 8vh 0;
 }
 .services-page {
     color : var(--color-white);
@@ -15,6 +15,7 @@ hr {
     flex-direction: column;
 
     padding: var(--border-padding);
+    margin-bottom: clamp(0.5rem, 5vh, 5rem);
 
     .contact-button {
         align-self: center;
@@ -26,7 +27,7 @@ hr {
     flex-direction: row wrap;
 
     gap: clamp(2rem, 4vw, 5rem);
-    margin-bottom: 5vh;
+    margin-bottom: 8vh;
     width: 100%;
     max-width: 1400px;
     gap: 3vh;
@@ -106,6 +107,6 @@ hr {
 
 
 .services-bottom {
-    margin-bottom: clamp(0.5rem, 5vh, 4rem);
+    margin-bottom: clamp(0.5rem, 5vh, 5rem);
 }
 

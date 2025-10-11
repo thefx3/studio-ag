@@ -4,6 +4,7 @@ import Space from "../components/Space";
 import Cards from "../components/Services-cards";
 import image from "../images/services-image.png";
 import audio from "../images/audio.png";
+import vector from "../images/vector.png";
 
 function Services() {
     return (
@@ -28,7 +29,7 @@ function Services() {
             <div className="services-bottom">
                 <div className="container-cards">
                     <Cards 
-                        logo={audio}
+                        logo={vector}
                         title="Editing"
                         description="Vous venez d'enregistrer votre projet et avez besoin d'un nettoyage des prises, remise en phase ou bien une balance des niveaux ?
                         Mon service d'editing est ce qu'il vous faut, je m'occupe de transformer votre projet brut en support idéal pour un mixage dans les meilleures conditions."
