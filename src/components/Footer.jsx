@@ -10,6 +10,7 @@ import youtube from "../images/youtube.png";
 function Footer () {
   return (
     <footer className="footer">
+        
         <div className ="footer-top">
             <div className="footer-topleft">
                 <img src={logo} alt="Logo" className="footer-logo" />

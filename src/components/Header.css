@@ -87,7 +87,7 @@
 }
   
 
-@media (max-width: 900px) {
+@media (max-width: 1200px) {
   /* Le menu burger s’affiche */
   .burger {
     display: block;
