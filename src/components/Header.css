@@ -69,4 +69,67 @@
   transform: scale(1.03);
   cursor: pointer;
 }
+
+.burger {
+  display: none;
+  cursor: pointer;
+}
+
+.burger-icon {
+  filter: invert(1);
+  width: 28px;
+  height: 28px;
+  transition: transform 0.3s ease;
+}
+
+.burger-icon:hover {
+  transform: scale(1.1);
+}
   
+
+@media (max-width: 900px) {
+  /* Le menu burger s’affiche */
+  .burger {
+    display: block;
+  }
+
+  /* On cache les menus au départ */
+  .header-middle,
+  .header-right {
+    position: absolute;
+    top: 80px;
+    right: 0;
+    background-color: rgba(10, 10, 10, 0.95);
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 30px 0;
+    border-top: 1px solid var(--color-blue-accent1);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+  }
+
+  /* Quand le menu est ouvert */
+  .header-middle.active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  /* Le bloc Contact passe dans le menu burger */
+  .header-right {
+    display: none;
+  }
+
+  .header-middle.active + .header-right {
+    display: flex;
+  }
+
+  .header {
+    flex-wrap: wrap;
+    background: rgba(0, 0, 0, 0.6);
+  }
+}
