@@ -9,7 +9,6 @@ import vector from "../images/vector.png";
 function Services() {
     return (
         <div className="services-page">
-            <Space height={"3vh"} />
 
             <hr></hr>
 

@@ -10,8 +10,6 @@ function About () {
         <div className="about-page">
             <Space height={"3vh"} />
 
-            <hr></hr>
-
             <div className="about-title">
                 <p>Qui suis-je ?</p>
                 <h2 className="aldric">Aldric Granger</h2>
@@ -49,6 +47,7 @@ function About () {
                     </div>
                 </div>
             </div>
+
         </div>
     )
 }
