@@ -1,3 +1,4 @@
+/* Header.css */
 
 .header {
   position: absolute;
@@ -26,6 +27,7 @@
   .nav-button {
     font-family: 'Inria Sans', sans-serif;
     font-size: clamp(1rem, 2vw, 2rem);
+    padding: 8px 16px;
   }
 }
 

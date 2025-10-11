@@ -1,0 +1,49 @@
+.card {
+    font-family: "Inter", sans-serif;
+    border-radius: 8px;
+    padding: clamp(12px, 2vw, 24px);
+    background-color: var(--color-dark-accent1);
+    flex: 1 1 clamp(150px, 16vw, 500px);
+    min-width: 150px;
+    text-align: left;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+
+    display: flex;
+    flex-direction: column;
+    gap: clamp(8px, 1.5vw, 16px);
+
+
+    img {
+        width: clamp(50px, 20vw, 80px);
+        height: auto;
+        border-radius: 8px;
+        margin-bottom: 8px;
+        align-self: center;
+    }
+
+    .card-title {
+        font-size: clamp(1rem, 1.8vw, 1.55rem);
+        margin-bottom: 0.5em;
+    }
+
+    .card-description {
+        flex: 1 1 auto;
+        font-size: clamp(0.8rem, 1vw, 1.15rem);
+        line-height: 1.4;
+        color: var(--color-grey-accent1);
+    }
+
+    .card-price {
+        margin-top: auto;
+        font-size: clamp(0.9rem, 1.2vw, 1.25rem);
+        margin-top: 1em;
+        font-weight: 600;
+        color: var(--color-blue-accent2);
+        align-self: flex-start;
+    }
+}
+
+.card:hover {
+    background-color: var(--color-dark-accent1);
+    transform: translateY(-5px);
+}

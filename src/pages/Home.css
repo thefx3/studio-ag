@@ -5,10 +5,11 @@
     width: 100vw;
 
     background: url('../src/images/home-image.png');
+    background-size: cover;
     color: var(--color-white);
 
     padding: var(--border-padding);
-    gap: 5vh;
+    gap: 2vw;
 
     h1 {
         font-size: clamp(2rem, 10vw, 7rem); /* clamp(min, preferred, max); */
@@ -23,9 +24,4 @@
         line-height: 1.4;
     }
 
-}
-
-.space {
-    height: 20vh;
-    width: 100%;
 }
