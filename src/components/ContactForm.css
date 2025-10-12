@@ -63,17 +63,17 @@
     padding: var(--gap-12) var(--gap-16);
     font-size: var(--font-size-18);
     font-weight: 500;
-    color: var(--color-dark-accent1);
-    background-color: var(--color-blue-accent2);
-    border: none;
+    color: var(--color-white);
+    background-color: transparent;
+    border: 1px solid var(--color-blue-accent2);
     border-radius: var(--border-radius);
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
   }
   
   .contact-btn:hover {
-    background-color: var(--color-blue-accent1);
-    color: var(--color-white);
+    background-color: var(--color-blue-accent2);
+    color: var(--color-dark-accent1);
     transform: scale(1.03);
   }
   
