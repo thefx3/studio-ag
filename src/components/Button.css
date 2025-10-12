@@ -1,30 +1,24 @@
 .nav-button {
     background-color: transparent;
+    font-family: 'Inria Sans', sans-serif;
     appearance: none;
     text-decoration: none;
     color: var(--color-white);
     border: none;
-
-    padding: clamp(6px, 1vw, 14px) clamp(12px, 2vw, 28px);
-
-    border-radius: clamp(12px, 2vw, 25px);
-  
     cursor: pointer;
-
-    font-size: clamp(0.9rem, 1.5vw, 1.25rem);
+    padding: var(--gap-8) var(--gap-16);
+    font-size:var(--font-size-20);
+    
     line-height: 1.2;
-    font-family: 'Inria Sans', sans-serif;
-
-    transition: all 0.3s ease;
   }
 
 .nav-button.contact-button {
       background-color: var(--color-blue-accent1);
       color: var(--color-white);
-      font-size: clamp(0.5rem, 1.75vw, 1.5rem);
-      padding: clamp(8px, 1.5vw, 18px) clamp(20px, 2.5vw, 35px);
+      font-size: var(--font-size-28);
+      padding: var(--gap-8) var(--gap-20);
       border: none;
-      border-radius: 30px;
+      border-radius: 35px;
       cursor: pointer;
       width: fit-content;
       transition: background-color 0.3s ease;
@@ -34,3 +28,11 @@
           color: var(--color-dark-accent1);
   }
 }
+
+@media (max-width: 1000px) {
+    .nav-button {
+        font-size: var(--font-size-32);
+        padding: var(--gap-4) var(--gap-8);
+    }
+}
+

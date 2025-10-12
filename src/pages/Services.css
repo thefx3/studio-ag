@@ -4,19 +4,19 @@ hr {
     border: none;
     width: 100%;
     border-top: 1px solid var(--color-dark-accent2);
-    margin-bottom: 10vh;
+    margin-bottom: var(--gap-60);
 }
 
 .services-page {
     color : var(--color-white);
     font-family: 'Inter', sans-serif;
-    font-size: clamp(1rem, 1.5vw, 1.25rem);
+
     width: 100%;
     display: flex;
     flex-direction: column;
 
     padding: var(--border-padding);
-    margin-bottom: clamp(0.5rem, 5vh, 5rem);
+    margin-bottom: var(--gap-60);
 
     .contact-button {
         align-self: center;
@@ -27,14 +27,13 @@ hr {
     grid-template-columns: 1.5fr 1fr;
     flex-direction: row wrap;
 
-    gap: clamp(2rem, 4vw, 5rem);
     margin-bottom: 8vh;
     width: 100%;
     max-width: 1400px;
-    gap: 3vh;
+    gap: var(--gap-40);
 
     h2 {
-        font-size: clamp(2rem, 4vw, 4rem);
+        font-size: var(--font-size-60);
         font-weight: 700;
         line-height: 1.1;
     }
@@ -51,30 +50,24 @@ hr {
 .services-text {
     display: flex;
     flex-direction: column;
-    gap: clamp(0.9rem, 1.5vw, 2.25rem);
+    gap: var(--gap-16);
     max-width: 50ch;
     min-width: 45%;
 }
 .services-title {
-    font-size: clamp(1rem, 2vw, 2rem);
+    font-size: var(--font-size-32);
     line-height: 1.1;
     color: var(--color-blue-accent2);
 }
 
-.servces-subtitle {
-    font-size: clamp(1rem, 1.5vw, 1.5rem);
-    font-weight: 700;
-    line-height: 1.1;
-}
-
 .services-p {
-    margin-top: clamp(1rem, 2vh, 2rem);
-    font-size: clamp(0.95rem, 1.5vw, 1.5rem);
+    margin-top: var(--gap-20);
+    font-size: var(--font-size-24);
     line-height: 1.5;
 }
 
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
     .services-top {
       grid-template-columns: 1fr;
       text-align: center;

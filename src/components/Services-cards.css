@@ -1,7 +1,7 @@
 .card {
     font-family: "Inter", sans-serif;
     border-radius: 8px;
-    padding: clamp(12px, 2vw, 24px);
+    padding: var(--gap-16);
     background-color: var(--color-dark-accent1);
     flex: 1 1 clamp(200px, 16vw, 500px);
     min-width: 200px;
@@ -10,11 +10,11 @@
 
     display: flex;
     flex-direction: column;
-    gap: clamp(8px, 1.5vw, 16px);
+    gap: var(--gap-16);
 
 
     img {
-        width: clamp(20px, 20vw, 75px);
+        width: clamp(15px, 20vw, 75px);
         height: auto;
         border-radius: 8px;
         margin-bottom: 8px;
@@ -22,20 +22,20 @@
     }
 
     .card-title {
-        font-size: clamp(1rem, 1.8vw, 1.55rem);
-        margin-bottom: 0.5em;
+        font-size: var(--font-size-24);
+        margin-bottom: var(--gap-4);
     }
 
     .card-description {
         flex: 1 1 auto;
-        font-size: clamp(0.8rem, 1vw, 1.15rem);
+        font-size: var(--font-size-20);
         line-height: 1.4;
         color: var(--color-grey-accent1);
     }
 
     .card-price {
         margin-top: auto;
-        font-size: clamp(0.9rem, 1.2vw, 1.25rem);
+        font-size: var(--font-size-22);
         margin-top: 1em;
         font-weight: 600;
         color: var(--color-blue-accent2);

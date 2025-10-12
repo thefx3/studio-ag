@@ -11,21 +11,7 @@ import "./App.css";
 
 function App() {
   return (
-    // <Router>
 
-    //   <Header />
-
-    //   <Routes>
-
-    //     <Route path="/home" element={<Home />} />
-    //     <Route path="/services" element={<Services />} />
-    //     <Route path="/studio" element={<Studio />} />
-    //     <Route path="/about" element={<About />} />
-    //     {/*
-    //     <Route path="/contact" element={<Contact />} /> */}
-        
-    //   </Routes>
-    // </Router>
     
     <>
 <div id="header"><Header /></div>
@@ -42,3 +28,20 @@ function App() {
 }
 
 export default App;
+
+
+    // <Router>
+
+    //   <Header />
+
+    //   <Routes>
+
+    //     <Route path="/home" element={<Home />} />
+    //     <Route path="/services" element={<Services />} />
+    //     <Route path="/studio" element={<Studio />} />
+    //     <Route path="/about" element={<About />} />
+    //     {/*
+    //     <Route path="/contact" element={<Contact />} /> */}
+        
+    //   </Routes>
+    // </Router>
