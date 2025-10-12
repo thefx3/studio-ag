@@ -3,7 +3,7 @@
     flex-direction: column;
     width: 100vw;
 
-    background: url('../src/images/home-image.png');
+    background: url('/public/home-image.png');
     background-size: cover;
     color: var(--color-white);
 
