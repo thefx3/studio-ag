@@ -22,27 +22,15 @@ export default function Button({ text, to}) {
 
 }
 
-export function Button_contact({ text, to }) {
-  const scrollToSection = (id) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-  };
-
+function Button_contact({ text, to }) {
   return (
-    <button className="nav-button contact-button" onClick={() => scrollToSection(to)}>
-      {text}
-    </button>
-  );
-}
-
-function Button2contact({ text, to }) {
-  return (
-    <Link to={to} className="route-button nav-button">
+    <Link to={to} className="contact-button nav-button">
       {text}
     </Link>
   );
 }
 
-export {Button2contact};
+export {Button_contact};
 
 
 // function Button_contact ({ text, to }) {

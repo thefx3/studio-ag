@@ -49,6 +49,7 @@
 .header-right {
   display: flex;
   align-items: center;
+  background-color: transparent;
   border: 1px solid var(--color-blue-accent1);
   border-radius: 35px;
 
@@ -64,7 +65,16 @@
 
 }
 
-.header-right:hover {
+.header-right .nav-button {
+  background-color: transparent;
+
+  &:hover {
+    background-color: transparent;
+    color: var(--color-white);
+  }
+}
+
+nav.header-right:hover {
   background-color: var(--color-blue-accent1);
   transform: scale(1.03);
   cursor: pointer;

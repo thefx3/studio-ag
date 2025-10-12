@@ -6,7 +6,7 @@ import logo from "../images/logo.png";
 import send from "../images/send.png";
 import menu from "../images/menu.png";
 import close from "../images/close.png";
-import { Button2contact } from "./Button";
+import { Button_contact } from "./Button";
 
 
 function Header() {
@@ -38,7 +38,7 @@ function Header() {
 
       <nav className="header-right">
         <img src={send} alt="Send Logo" className="icon" />
-        <Button2contact text="Contact" to="/contact" />
+        <Button_contact text="Contact" to="/contact" />
       </nav>
     </header>
   );
