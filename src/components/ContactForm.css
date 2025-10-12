@@ -1,0 +1,105 @@
+.contact-container {
+    width: 100%;
+    max-width: 600px;
+    height: 100vh;
+    margin: 0 auto;
+    padding: var(--gap-40);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--gap-32);
+    text-align: center;
+  }
+  
+  .contact-title {
+    font-size: var(--font-size-40);
+    font-weight: 600;
+    color: var(--color-white);
+  }
+  
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-20);
+    width: 100%;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--gap-8);
+    width: 100%;
+  }
+  
+  label {
+    font-size: var(--font-size-16);
+    font-weight: 500;
+    color: var(--color-white);
+  }
+  
+  input,
+  textarea {
+    width: 100%;
+    padding: var(--gap-8) var(--gap-12);
+    font-family: "Inria Sans", sans-serif;
+    font-size: var(--font-size-16);
+    color: var(--color-white);
+    background-color: var(--color-dark-accent1);
+    border: 1px solid var(--color-dark-accent2);
+    border-radius: var(--border-radius);
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  
+  input:focus,
+  textarea:focus {
+    border-color: var(--color-blue-accent2);
+  }
+  
+  .contact-btn {
+    align-self: center;
+    margin-top: var(--gap-12);
+    padding: var(--gap-12) var(--gap-16);
+    font-size: var(--font-size-18);
+    font-weight: 500;
+    color: var(--color-dark-accent1);
+    background-color: var(--color-blue-accent2);
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .contact-btn:hover {
+    background-color: var(--color-blue-accent1);
+    color: var(--color-white);
+    transform: scale(1.03);
+  }
+  
+  .form-result {
+    margin-top: var(--gap-12);
+    font-size: var(--font-size-20);
+    color: var(--color-white);
+  }
+  
+  .back-home-btn {
+    display: inline-block;
+    align-self: flex-start;
+    margin-top: var(--gap-20);
+    padding: var(--gap-8) var(--gap-16);
+    font-size: var(--font-size-18);
+    font-weight: 600;
+    color: var(--color-white);
+    border: 1px solid var(--color-white);
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+
+    &:hover {
+      background-color: var(--color-blue-accent2);
+      color: var(--color-dark-accent1);
+      transform: scale(1.03);
+    }
+  }

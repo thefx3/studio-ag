@@ -34,15 +34,15 @@ export function Button_contact({ text, to }) {
   );
 }
 
-// function Button({ text, to }) {
-//   return (
-//     <Link to={to} className="nav-button">
-//       {text}
-//     </Link>
-//   );
-// }
+function Button2contact({ text, to }) {
+  return (
+    <Link to={to} className="route-button nav-button">
+      {text}
+    </Link>
+  );
+}
 
-// export default Button;
+export {Button2contact};
 
 
 // function Button_contact ({ text, to }) {
