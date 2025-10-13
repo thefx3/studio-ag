@@ -34,7 +34,7 @@ function Header() {
       <nav className={`header-middle ${menuOpen ? "active" : ""}`}>
         <Button text="Services et Tarifs" to="services" />
         <Button text="La Brique Studio" to="studio" />
-        <Button2 text="Qui suis-je ?" to="about" />
+        <Button text="Qui suis-je ?" to="about" />
       </nav>
 
       <nav className="header-right">
@@ -46,40 +46,3 @@ function Header() {
 }
 
 export default Header;
-
-function Header2() {
-  const [menuOpen, setMenuOpen] = useState(false);
-
-  const toggleMenu = () => setMenuOpen(!menuOpen);
-
-  return (
-    <header className="header">
-      <div className="header-left">
-        <img src={logo} alt="Studio AG Logo" className="logo-image" />
-        <Button2 text="STUDIO AG" to="/" />
-      </div>
-
-      {/* Bouton burger visible sur mobile */}
-      <div className="burger" onClick={toggleMenu}>
-        <img
-          src={menuOpen ? close : menu}
-          alt="Menu"
-          className="burger-icon"
-        />
-      </div>
-
-      <nav className={`header-middle ${menuOpen ? "active" : ""}`}>
-        <Button2 text="Services et Tarifs" to="/services" />
-        <Button2 text="La Brique Studio" to="/studio" />
-        <Button2 text="Qui suis-je ?" to="/about" />
-      </nav>
-
-      <nav className="header-right">
-        <img src={send} alt="Send Logo" className="icon" />
-        <Button_contact text="Contact" to="/contact" />
-      </nav>
-    </header>
-  );
-}
-
-export {Header2};

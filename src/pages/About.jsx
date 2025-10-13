@@ -3,13 +3,10 @@ import Space from "../components/Space";
 import { Button_contact } from "../components/Button";
 import aldric from "../images/aldric.png";
 import aldric2 from "../images/aldric-2.png";
-import { Header2 } from "../components/Header";
-
 
 function About () {
     return (
         <>
-        <Header2/>
         <div className="about-page">
 
             <Space height={"10vh"} />

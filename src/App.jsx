@@ -22,7 +22,7 @@ function App() {
               <div id="home"><Home /></div>
               <div id="services"><Services /></div>
               <div id="studio"><Studio /></div>
-              {/* <div id="about"><About /></div> */}
+              <div id="about"><About /></div>
               <div id="footer"><Footer /></div>
             </>
           }
@@ -30,6 +30,8 @@ function App() {
 
         {/* 📩 Page contact séparée */}
         <Route path="/home" element={<Home />}/>
+        <Route path="/services" element={<Services />} />
+        <Route path="/studio" element={<Studio />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
@@ -38,21 +40,3 @@ function App() {
 }
 
 export default App;
-
-
-
-    // <Router>
-
-    //   <Header />
-
-    //   <Routes>
-
-    //     <Route path="/home" element={<Home />} />
-    //     <Route path="/services" element={<Services />} />
-    //     <Route path="/studio" element={<Studio />} />
-    //     <Route path="/about" element={<About />} />
-    //     {/*
-    //     <Route path="/contact" element={<Contact />} /> */}
-        
-    //   </Routes>
-    // </Router>
