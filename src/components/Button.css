@@ -29,10 +29,4 @@
   }
 }
 
-@media (max-width: 1000px) {
-    .nav-button {
-        font-size: var(--font-size-32);
-        padding: var(--gap-4) var(--gap-8);
-    }
-}
 
