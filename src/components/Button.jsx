@@ -22,6 +22,18 @@ export default function Button({ text, to}) {
 
 }
 
+function Button2 ({ text, to }) {
+  return (
+    <Link to={to} className="nav-button">
+    {text}
+    </Link>
+  )
+}
+
+export { Button2 };
+
+
+
 function Button_contact({ text, to }) {
   return (
     <Link to={to} className="contact-button nav-button">
@@ -31,16 +43,3 @@ function Button_contact({ text, to }) {
 }
 
 export {Button_contact};
-
-
-// function Button_contact ({ text, to }) {
-//   return (
-//     <Link to={to} className="nav-button contact-button">
-//       {text}
-//     </Link>
-//   )
-// }
-
-// export { Button_contact };
-
-// Button.jsx

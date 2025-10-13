@@ -22,13 +22,15 @@ function App() {
               <div id="home"><Home /></div>
               <div id="services"><Services /></div>
               <div id="studio"><Studio /></div>
-              <div id="about"><About /></div>
+              {/* <div id="about"><About /></div> */}
               <div id="footer"><Footer /></div>
             </>
           }
         />
 
         {/* 📩 Page contact séparée */}
+        <Route path="/home" element={<Home />}/>
+        <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
     </Router>
