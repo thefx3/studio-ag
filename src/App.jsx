@@ -12,13 +12,14 @@ import "./App.css";
 function App() {
   return (
     <Router>
+      <Header />
       <Routes>
         {/* 🌍 Page principale : le site scrollable */}
         <Route
           path="/"
           element={
             <>
-              <div id="header"><Header /></div>
+
               <div id="home"><Home /></div>
               <div id="services"><Services /></div>
               <div id="studio"><Studio /></div>

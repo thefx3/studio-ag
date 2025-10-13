@@ -1,46 +1,40 @@
 // src/components/Button.jsx
+
 import { Link } from "react-router-dom";
 import "./Button.css";
 
-//SCROLLING
-
-export default function Button({ text, to}) {
-  const scrollToSection = (id) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-      // ✅ Met à jour l’URL sans recharger la page
-      window.history.pushState(null, "", `#${id}`);
+// 🔹 Bouton de navigation interne (scroll)
+export default function Button({ text, to }) {
+  const handleClick = () => {
+    const section = document.getElementById(to);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+      window.history.pushState(null, "", `#${to}`); // met à jour l'URL sans recharger
     }
   };
 
   return (
-    <button className="nav-button" onClick={() => scrollToSection(to)}>
+    <button className="nav-button" onClick={handleClick}>
       {text}
     </button>
   );
-
 }
 
-function Button2 ({ text, to }) {
+// 🔹 Bouton de lien externe ou page séparée
+export function Button2({ text, to }) {
   return (
     <Link to={to} className="nav-button">
-    {text}
+      {text}
     </Link>
-  )
+  );
 }
 
-export { Button2 };
-
-
-
-function Button_contact({ text, to }) {
+// 🔹 Bouton de contact (style différent)
+export function Button_contact({ text, to }) {
   return (
     <Link to={to} className="contact-button nav-button">
       {text}
     </Link>
   );
 }
-
-export {Button_contact};
 

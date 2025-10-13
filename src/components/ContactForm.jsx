@@ -32,7 +32,7 @@ export default function ContactForm() {
   return (
     
     <div className="contact-container">
-        <Link to="/" className="back-home-btn">← Home</Link>
+      <Space height={80} />
       <h2 className="contact-title">Formulaire de contact</h2>
       <form onSubmit={handleSubmit} className="contact-form">
         <div className="form-group">

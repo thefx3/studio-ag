@@ -143,3 +143,17 @@ nav.header-right:hover {
     background: rgba(0, 0, 0, 0.6);
   }
 }
+
+#only-home .nav-button{
+  align-self: center;
+  justify-self: center;
+  font-size: var(--font-size-24);
+  border: 1px solid var(--color-blue-accent1);
+  border-radius: 35px;
+
+  &:hover {
+    background-color: var(--color-blue-accent1);
+    transform: scale(1.03);
+    cursor: pointer;
+  }
+}

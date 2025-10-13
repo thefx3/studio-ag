@@ -1,25 +1,27 @@
-// Header.jsx
 import { useState } from "react";
+import { useLocation } from "react-router-dom";
 import Button from "./Button";
+import { Button2, Button_contact } from "./Button";
 import "./Header.css";
+
 import logo from "../images/logo.png";
 import send from "../images/send.png";
 import menu from "../images/menu.png";
 import close from "../images/close.png";
-import { Button_contact } from "./Button";
-import { Button2 } from "./Button";
-
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const location = useLocation(); // 👈 Pour savoir sur quelle page on est
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
+
+  const isContactPage = location.pathname === "/contact";
 
   return (
     <header className="header">
       <div className="header-left">
         <img src={logo} alt="Studio AG Logo" className="logo-image" />
-        <Button text="STUDIO AG" to="/" />
+        <Button2 text="STUDIO AG" to="/" /> {/* Retour page principale */}
       </div>
 
       {/* Bouton burger visible sur mobile */}
@@ -31,16 +33,28 @@ function Header() {
         />
       </div>
 
-      <nav className={`header-middle ${menuOpen ? "active" : ""}`}>
-        <Button text="Services et Tarifs" to="services" />
-        <Button text="La Brique Studio" to="studio" />
-        <Button text="Qui suis-je ?" to="about" />
-      </nav>
+      {/* Si on n’est PAS sur la page Contact */}
+      {!isContactPage && (
+        <>
+          <nav className={`header-middle ${menuOpen ? "active" : ""}`}>
+            <Button text="Services et Tarifs" to="services" />
+            <Button text="La Brique Studio" to="studio" />
+            <Button text="Qui suis-je ?" to="about" />
+          </nav>
 
-      <nav className="header-right">
-        <img src={send} alt="Send Logo" className="icon" />
-        <Button_contact text="Contact" to="/contact" />
-      </nav>
+          <nav className="header-right">
+            <img src={send} alt="Send Logo" className="icon" />
+            <Button_contact text="Contact" to="/contact" />
+          </nav>
+        </>
+      )}
+
+      {/* Si on est sur la page Contact */}
+      {isContactPage && (
+        <nav className={`header-middle ${menuOpen ? "active" : ""}`} id="only-home">
+          <Button2 text="Accueil" to="/" />
+        </nav>
+      )}
     </header>
   );
 }
