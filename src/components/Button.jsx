@@ -37,4 +37,3 @@ export function Button_contact({ text, to }) {
     </Link>
   );
 }
-
