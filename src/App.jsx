@@ -12,7 +12,7 @@ import "./App.css";
 function App() {
   return (
     <Router>
-      <Header />
+
       <Routes>
         {/* 🌍 Page principale : le site scrollable */}
         <Route
@@ -20,6 +20,7 @@ function App() {
           element={
             <>
 
+              <Header />
               <div id="home"><Home /></div>
               <div id="services"><Services /></div>
               <div id="studio"><Studio /></div>
@@ -31,14 +32,33 @@ function App() {
 
         {/* 📩 Page contact séparée */}
         <Route path="/home" element={<Home />}/>
-        <Route path="/services" element={<Services />} />
-        <Route path="/studio" element={<Studio />} />
-        <Route path="/about" element={
+        <Route path="/services" element={
           <>
-          <About />
+            <Header />
+            <Services />
+            <Footer />
           </>
           } />
-        <Route path="/contact" element={<Contact />} />
+        <Route path="/studio" element={
+          <>
+            <Header />
+            <Studio />
+            <Footer />
+          </>
+          } />
+        <Route path="/about" element={
+          <>
+            <Header />
+            <About />
+            <Footer />
+          </>
+          } />
+        <Route path="/contact" element={
+          <>
+            <Header />
+            <Contact />
+          </>
+          } />
       </Routes>
     </Router>
   );
