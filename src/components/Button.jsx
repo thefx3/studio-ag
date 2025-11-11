@@ -1,16 +1,39 @@
 // src/components/Button.jsx
 
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useCallback, useEffect } from "react";
 import "./Button.css";
 
 // 🔹 Bouton de navigation interne (scroll)
 export default function Button({ text, to }) {
-  const handleClick = () => {
-    const section = document.getElementById(to);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-      window.history.pushState(null, "", `#${to}`); // met à jour l'URL sans recharger
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const scrollToSection = useCallback(
+    (updateHash = false) => {
+      const section = document.getElementById(to);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+        if (updateHash && location.hash !== `${to}`) {
+          window.history.pushState(null, "", `${to}`);
+        }
+      }
+    },
+    [location.hash, to]
+  );
+
+  useEffect(() => {
+    if (location.pathname === "/" && location.hash === `${to}`) {
+      scrollToSection();
     }
+  }, [location.hash, location.pathname, scrollToSection, to]);
+
+  const handleClick = () => {
+    if (location.pathname !== "/") {
+      navigate(`/${to}`);
+      return;
+    }
+    scrollToSection(true);
   };
 
   return (

@@ -20,6 +20,8 @@ function App() {
             <>
               <div id="home"><Home /></div>
               <div id="services"><Services /></div>
+              <div id="studio"><Studio /></div>
+              <div id="about"><About /></div>
               <div id="footer"><Footer /></div>
             </>
           }

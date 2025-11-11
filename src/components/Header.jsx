@@ -40,7 +40,7 @@ function Header() {
           <nav className={`header-middle ${menuOpen ? "active" : ""}`}>
             <Button text="Services et Tarifs" to="services" />
             <Button text="La Brique Studio" to="studio" />
-            <Button2 text="Qui suis-je ?" to="about" />
+            <Button text="Qui suis-je ?" to="about" />
           </nav>
 
           <nav className="header-right">
