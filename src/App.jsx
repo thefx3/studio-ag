@@ -7,6 +7,7 @@ import About from "./pages/About";
 import Studio from "./pages/Studio";
 import Footer from "./components/Footer";
 import Contact from "./pages/Contact";
+import Space from "./components/Space";
 import "./App.css";
 
 function App() {
@@ -20,19 +21,19 @@ function App() {
             <>
               <div id="home"><Home /></div>
               <div id="services"><Services /></div>
-              <div id="studio"><Studio /></div>
-              <div id="about"><About /></div>
               <div id="footer"><Footer /></div>
             </>
           }
         />
 
         {/* 📩 Page contact séparée */}
-        <Route path="/home" element={<Home />} />
+        <Route path="/" element={<Home />} />
+
         <Route
           path="/services"
           element={
             <>
+              <Space height={"20vh"} />
               <Services />
               <Footer />
             </>
@@ -42,6 +43,7 @@ function App() {
           path="/studio"
           element={
             <>
+              <Space height={"20vh"} />
               <Studio />
               <Footer />
             </>
@@ -51,6 +53,7 @@ function App() {
           path="/about"
           element={
             <>
+              <Space height={"20vh"} />
               <About />
               <Footer />
             </>

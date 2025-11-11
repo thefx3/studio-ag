@@ -12,7 +12,6 @@ function Services() {
     return (
         <div className="services-page">
 
-            <hr></hr>
 
             <div className="services-top">
                 <div className="services-text">

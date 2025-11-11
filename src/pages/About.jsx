@@ -8,9 +8,6 @@ function About () {
     return (
         <>
         <div className="about-page">
-
-            <Space height={"10vh"} />
-
             <div className="about-title">
                 <p>Qui suis-je ?</p>
                 <h2 className="aldric">Aldric Granger</h2>
