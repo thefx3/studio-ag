@@ -33,7 +33,7 @@ function App() {
           path="/services"
           element={
             <>
-              <Space height={"20vh"} />
+              <Space height={"15vh"} />
               <Services />
               <Footer />
             </>
@@ -43,7 +43,7 @@ function App() {
           path="/studio"
           element={
             <>
-              <Space height={"20vh"} />
+              <Space height={"15vh"} />
               <Studio />
               <Footer />
             </>
@@ -53,7 +53,7 @@ function App() {
           path="/about"
           element={
             <>
-              <Space height={"20vh"} />
+              <Space height={"15vh"} />
               <About />
               <Footer />
             </>
