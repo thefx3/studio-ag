@@ -14,8 +14,8 @@ export default function Button({ text, to }) {
       const section = document.getElementById(to);
       if (section) {
         section.scrollIntoView({ behavior: "smooth" });
-        if (updateHash && location.hash !== `${to}`) {
-          window.history.pushState(null, "", `${to}`);
+        if (updateHash && location.hash !== `#${to}`) {
+          window.history.pushState(null, "", `#${to}`);
         }
       }
     },
@@ -23,14 +23,14 @@ export default function Button({ text, to }) {
   );
 
   useEffect(() => {
-    if (location.pathname === "/" && location.hash === `${to}`) {
+    if (location.pathname === "/" && location.hash === `#${to}`) {
       scrollToSection();
     }
   }, [location.hash, location.pathname, scrollToSection, to]);
 
   const handleClick = () => {
     if (location.pathname !== "/") {
-      navigate(`/${to}`);
+      navigate(`/#${to}`);
       return;
     }
     scrollToSection(true);
