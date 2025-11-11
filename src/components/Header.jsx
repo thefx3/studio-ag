@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
-import Button from "./Button";
-import { Button2, Button_contact } from "./Button";
+import Button, { Button2, Button_contact } from "./Button";
 import "./Header.css";
 
 import logo from "../images/logo.png";
@@ -11,27 +10,20 @@ import close from "../images/close.png";
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const location = useLocation(); // 👈 Pour savoir sur quelle page on est
+  const location = useLocation();
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
-
   const isContactPage = location.pathname === "/contact";
-  const isHomePage = location.pathname === "/";
 
   return (
     <header className="header">
       <div className="header-left">
         <img src={logo} alt="Studio AG Logo" className="logo-image" />
-        <Button2 text="STUDIO AG" to="/" /> {/* Retour page principale */}
+        <Button2 text="STUDIO AG" to="/" />
       </div>
 
-      {/* Bouton burger visible sur mobile */}
       <div className="burger" onClick={toggleMenu}>
-        <img
-          src={menuOpen ? close : menu}
-          alt="Menu"
-          className="burger-icon"
-        />
+        <img src={menuOpen ? close : menu} alt="Menu" className="burger-icon" />
       </div>
 
       {/* Si on n’est PAS sur la page Contact */}
@@ -49,14 +41,6 @@ function Header() {
           </nav>
         </>
       )}
-
-      {/* Si on est sur la page Contact */}
-      {isContactPage && (
-        <nav className={`header-middle ${menuOpen ? "active" : ""}`} id="only-home">
-          <Button2 text="Accueil" to="/" />
-        </nav>
-      )}
-   
     </header>
   );
 }

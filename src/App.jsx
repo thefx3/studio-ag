@@ -28,14 +28,34 @@ function App() {
         />
 
         {/* 📩 Page contact séparée */}
-        <Route path="/home" element={<Home />}/>
-        <Route path="/services" element={<Services />} />
-        <Route path="/studio" element={<Studio />} />
-        <Route path="/about" element={
-          <>
-          <About />
-          </>
-          } />
+        <Route path="/home" element={<Home />} />
+        <Route
+          path="/services"
+          element={
+            <>
+              <Services />
+              <Footer />
+            </>
+          }
+        />
+        <Route
+          path="/studio"
+          element={
+            <>
+              <Studio />
+              <Footer />
+            </>
+          }
+        />
+        <Route
+          path="/about"
+          element={
+            <>
+              <About />
+              <Footer />
+            </>
+          }
+        />
         <Route path="/contact" element={<Contact />} />
       </Routes>
     </Router>
