@@ -84,3 +84,11 @@
         url('./assets/fonts/Inter-SemiBold.ttf') format('truetype'),
         url('./assets/fonts/Inter-Bold.ttf') format('truetype');
 }
+
+.home-page .contact-button, .services-page .contact-button {
+  padding: var(--gap-8) var(--gap-16);
+}
+
+.header-right {
+  padding: var(--gap-8) var(--gap-16);
+}

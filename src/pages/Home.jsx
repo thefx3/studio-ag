@@ -9,7 +9,7 @@ function Home () {
       <Space height="30vh" />
       <h1>Crafted <br></br>for impact</h1>
       <p>Professional mixing and mastering studio dedicated to helping artists overcome the frustration of unpolished, unbalanced, or lifeless mixes.</p>
-      <Button_contact text="Contact" to="/contact" />
+      <Button_contact text="Contacter" to="/contact" />
     </div>
   )
 }

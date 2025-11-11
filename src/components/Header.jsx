@@ -45,7 +45,7 @@ function Header() {
 
           <nav className="header-right">
             <img src={send} alt="Send Logo" className="icon" />
-            <Button_contact text="Contact" to="/contact" />
+            <Button_contact text="Contacter" to="/contact" />
           </nav>
         </>
       )}

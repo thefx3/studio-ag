@@ -6,7 +6,6 @@
     color: var(--color-white);
     border: none;
     cursor: pointer;
-    padding: var(--gap-8) var(--gap-16);
     font-size:var(--font-size-20);
     
     line-height: 1.2;
@@ -15,8 +14,8 @@
 .contact-button {
       background-color: var(--color-blue-accent1);
       color: var(--color-white);
-      font-size: var(--font-size-28);
-      padding: var(--gap-8) var(--gap-20);
+      font-size: var(--font-size-22);
+      gap: 10px;
       border: none;
       border-radius: 35px;
       cursor: pointer;

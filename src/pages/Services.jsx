@@ -5,6 +5,8 @@ import Cards from "../components/Services-cards";
 import image from "../images/services-image.png";
 import audio from "../images/audio.png";
 import vector from "../images/vector.png";
+import mix from "../images/mix.png"
+import vol from "../images/vol.png"
 
 function Services() {
     return (
@@ -35,13 +37,13 @@ function Services() {
                         price="À partir de 10€"
                     />
                     <Cards 
-                        logo={audio}
+                        logo={mix}
                         title="Mixage"
                         description="Le mixage est une étape cruciale dans la production d'un projet musical avant le mastering. Il transforme un multipiste en morceau structuré et équilibré"
                         price="À partir de 75€"
                     />
                     <Cards 
-                        logo={audio}
+                        logo={vol}
                         title="Mastering"
                         description="Indispensable, le mastering est la dernière couche de vernis, la cerise sur la gâteau qui donnera une cohérence entre vos titres. Il permettra à votre projet d'être compétitif en s'alignant avec les standards de l'industrie musicale."
                         price="À partir de 25€"
@@ -49,7 +51,7 @@ function Services() {
                 </div>
             </div>
 
-            <Button_contact text="Contact" to="/contact" />
+            <Button_contact text="Contacter" to="/contact" />
         </div>
     )
 }

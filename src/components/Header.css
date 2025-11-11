@@ -38,6 +38,7 @@
 }
 
 .header-middle .nav-button {
+  padding: var(--gap-8) var(--gap-16);
   transition: background-color 0.3s ease;
 }
 
@@ -52,7 +53,7 @@
   background-color: transparent;
   border: 1px solid var(--color-blue-accent1);
   border-radius: 35px;
-
+  gap: var(--gap-8);
   transition: background-color 0.3s ease;
   transition: transform 0.3s ease;
 
@@ -60,7 +61,6 @@
     filter: invert(1);
     height: var(--font-size-28);
     width: auto;
-    margin-left: 8px;
   }
 
 }
