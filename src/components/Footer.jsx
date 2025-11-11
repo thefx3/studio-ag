@@ -26,17 +26,17 @@ function Footer () {
                 <Footersection
                 title="Mix and Mastering"
                 links={[
-                { href: "#home", text: "Présentation" },
-                { href: "#services", text: "Services et Tarifs" },
-                { href: "#about", text: "Qui suis-je ?" },
+                { href: "/", text: "Présentation" },
+                { href: "/services", text: "Services et Tarifs" },
+                { href: "/about", text: "Qui suis-je ?" },
                 ]}
             />
             <Footersection
                 title="Studio Brique"
                 links={[
-                { href: "#software", text: "Software" },
-                { href: "#hardware", text: "Hardware" },
-                { href: "#booking", text: "Booking" },
+                { href: "/software", text: "Software" },
+                { href: "/hardware", text: "Hardware" },
+                { href: "/booking", text: "Booking" },
                 ]}
             />
             </div>

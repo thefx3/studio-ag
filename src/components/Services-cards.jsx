@@ -7,7 +7,6 @@ function Cards ({logo, title, description, price}) {
             <img src={logo} alt="Logo Service" className="card-logo" />
             <p className="card-title">{title}</p>
             <p className="card-description">{description}</p>
-            <p className="card-price">{price}</p>
         </div>
     )
 }

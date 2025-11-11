@@ -33,19 +33,16 @@ function Services() {
                         title="Editing"
                         description="Vous venez d'enregistrer votre projet et avez besoin d'un nettoyage des prises, remise en phase ou bien une balance des niveaux ?
                         Mon service d'editing est ce qu'il vous faut, je m'occupe de transformer votre projet brut en support idéal pour un mixage dans les meilleures conditions."
-                        price="À partir de 10€"
                     />
                     <Cards 
                         logo={mix}
                         title="Mixage"
                         description="Le mixage est une étape cruciale dans la production d'un projet musical avant le mastering. Il transforme un multipiste en morceau structuré et équilibré"
-                        price="À partir de 75€"
                     />
                     <Cards 
                         logo={vol}
                         title="Mastering"
                         description="Indispensable, le mastering est la dernière couche de vernis, la cerise sur la gâteau qui donnera une cohérence entre vos titres. Il permettra à votre projet d'être compétitif en s'alignant avec les standards de l'industrie musicale."
-                        price="À partir de 25€"
                     />
                 </div>
             </div>
