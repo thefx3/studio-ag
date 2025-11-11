@@ -13,8 +13,8 @@ function Header() {
   const location = useLocation();
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
-
   const isContactPage = location.pathname === "/contact";
+  const isHomePage = location.pathname === "/";
 
   return (
     <header className="header">
@@ -32,9 +32,19 @@ function Header() {
       {!isContactPage && (
         <>
           <nav className={`header-middle ${menuOpen ? "active" : ""}`}>
-            <Button text="Services et Tarifs" to="services" />
-            <Button2 text="La Brique Studio" to="studio" />
-            <Button2 text="Qui suis-je ?" to="about" />
+            {isHomePage ? (
+              <>
+                <Button text="Services et Tarifs" to="services" />
+                <Button2 text="La Brique Studio" to="/studio" />
+                <Button2 text="Qui suis-je ?" to="/about" />
+              </>
+            ) : (
+              <>
+                <Button2 text="Services et Tarifs" to="/services" />
+                <Button2 text="La Brique Studio" to="/studio" />
+                <Button2 text="Qui suis-je ?" to="/about" />
+              </>
+            )}
           </nav>
 
           <nav className="header-right">
