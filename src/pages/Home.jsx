@@ -2,17 +2,65 @@
 import "./Home.css";
 import { Button_contact } from "../components/Button";
 import Space from "../components/Space";
+import { useState, useEffect } from "react";
+import { client } from "../sanityClient";
+
+const query = `*[_type == "homePage"][0]{
+  titleLine1,
+  titleLine2,
+  description,
+  ctaLabel
+}`;
 
 function Home () {
-  return (
-    <div className="home-page">
-      <Space height="30vh" />
-      <h1>Crafted <br></br>for impact</h1>
-      <p>Professional mixing and mastering studio dedicated to helping artists overcome the frustration of unpolished, unbalanced, or lifeless mixes.</p>
-      <Button_contact text="Contacter" to="/contact" />
+  //Sanity data fetching
+  const [data, setData] = useState(null);
 
-      <hr></hr>
-    </div>
+  useEffect(() => {
+    client.fetch(query)
+      .then((res) => {
+        console.log("SANITY HOME RESPONSE: ", res);
+        setData(res);
+      })
+      .catch((err) => console.error("SANITY ERROR: ", err));
+  }, []);
+  
+  // 
+
+  return (
+
+    // <div className="home-page">
+    //   <Space height="30vh" />
+
+    //   <h1>Crafted <br></br>for impact</h1>
+    //   <p>Professional mixing and mastering studio dedicated to helping artists overcome the frustration of unpolished, unbalanced, or lifeless mixes.</p>
+    //   <Button_contact text="Contacter" to="/contact" />
+
+    //   <hr></hr>
+    // </div>
+
+    <div className="home-page">
+    <Space height="30vh" />
+    
+    {!data ? (
+      <p>Chargement...</p>
+    ) : (
+      <>
+        <h1>
+          {data.titleLine1} <br /> {data.titleLine2}
+        </h1>
+
+        <p>{data.description}</p>
+
+        <Button_contact text={data.ctaLabel} to="/contact" />
+
+        <hr />
+      </>
+    )}
+  </div>
+    
+
+
   )
 }
 export default Home

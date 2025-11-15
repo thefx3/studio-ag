@@ -7,8 +7,27 @@ import audio from "../images/audio.png";
 import vector from "../images/vector.png";
 import mix from "../images/mix.png"
 import vol from "../images/vol.png"
+import { client } from "../sanityClient";
+import { urlFor } from "../sanityImage";
+import { useEffect, useState } from "react";
+
 
 function Services() {
+    const [data, setData] = useState(null);
+
+    useEffect(() => {
+        client.fetch(`*[_type == "servicesPage"][0]{
+          title,
+          subtitle,
+          description,
+          image,
+          serviceCards[]{title, description, icon},
+          ctaLabel
+        }`).then(setData);
+      }, []);
+      
+
+
     return (
         <div className="services-page">
 
@@ -22,13 +41,15 @@ function Services() {
                     l'attention des auditeurs et les maintient engagés.
                     Un mixage soigné qui sonne bien partout, des AirPods aux stades.</p>
                 </div>
-                    <img src={image} alt="Image Studio AG" />
+                    {/* <img src={image} alt="Image Studio AG" /> */}
+                    <img src={urlFor(data.image).url()} alt="Service" />
+
 
             </div>
 
             <div className="services-bottom">
                 <div className="container-cards">
-                    <Cards 
+                    {/* <Cards 
                         logo={vector}
                         title="Editing"
                         description="Vous venez d'enregistrer votre projet et avez besoin d'un nettoyage des prises, remise en phase ou bien une balance des niveaux ?
@@ -43,11 +64,24 @@ function Services() {
                         logo={vol}
                         title="Mastering"
                         description="Indispensable, le mastering est la dernière couche de vernis, la cerise sur la gâteau qui donnera une cohérence entre vos titres. Il permettra à votre projet d'être compétitif en s'alignant avec les standards de l'industrie musicale."
-                    />
+                    /> */}
+
+data.serviceCards.map(card => (
+  <Cards 
+    key={card.title}
+    logo={urlFor(card.icon).url()}
+    title={card.title}
+    description={card.description}
+  />
+))
+
+                    
                 </div>
             </div>
 
-            <Button_contact text="Contacter" to="/contact" />
+            {/* <Button_contact text="Contacter" to="/contact" /> */}
+            <Button_contact text={data.ctaLabel} to="/contact" />
+
         </div>
     )
 }

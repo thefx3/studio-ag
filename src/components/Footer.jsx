@@ -6,8 +6,23 @@ import thread from "../images/@.png";
 import twitter from "../images/x.png";
 import youtube from "../images/youtube.png";
 
+import { useEffect, useState } from "react";
+import { client } from "../sanityClient";
+
 
 function Footer () {
+    const [footerData, setFooterData] = useState(null);
+
+    useEffect(() => {
+    client.fetch(`*[_type == "footer"][0]{
+        brandName,
+        description,
+        columns[]{ title, links[]{label, href} },
+        socials[]{label, url},
+        legalLinks[]{label, href}
+    }`).then(setFooterData);
+    }, []);
+
   return (
     <footer className="footer">
         
@@ -15,15 +30,18 @@ function Footer () {
             <div className="footer-topleft">
                 <img src={logo} alt="Logo" className="footer-logo" />
                 <div className ="footer-text">
-                    <p>STUDIO AG</p>
+                    {/* <p>STUDIO AG</p>
                     <p>Professional mixing and mastering studio dedicated to helping artists overcome
                     the frustration of unpolished, unbalanced, or lifeless mixes.
-                    </p>
+                    </p> */}
+
+                    {footerData && footerData.brandName}
+                    {footerData && footerData.description}
                 </div>
             </div>
 
             <div className="footer-topright">
-                <Footersection
+                {/* <Footersection
                 title="Mix and Mastering"
                 links={[
                 { href: "/", text: "Présentation" },
@@ -38,7 +56,16 @@ function Footer () {
                 { href: "/hardware", text: "Hardware" },
                 { href: "/booking", text: "Booking" },
                 ]}
-            />
+            /> */}
+
+                {footerData && footerData.columns.map(col => (
+                <Footersection
+                    key={col.title}
+                    title={col.title}
+                    links={col.links.map(l => ({href: l.href, text: l.label}))}
+                />
+                ))}
+
             </div>
         </div>
 
