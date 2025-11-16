@@ -178,7 +178,51 @@ export default function ContactForm() {
       <h2 className="contact-title">{cms.title}</h2>
 
       <form onSubmit={handleSubmit} className="contact-form">
-        {/* ... tes inputs restent identiques ... */}
+               <div className="name-group">
+           <div className="form-group">
+             <label htmlFor="name">NOM</label>
+             <input
+               type="text"
+               name="name"
+               id="name"
+               className={errors.name ? "error" : ""}
+             />
+             {errors.name && <p className="error-text">{errors.name}</p>}
+           </div>
+
+           <div className="form-group">
+             <label htmlFor="lastname">Prénom</label>
+             <input
+               type="text"
+               name="lastname"
+               id="lastname"
+               className={errors.lastname ? "error" : ""}
+             />
+             {errors.lastname && <p className="error-text">{errors.lastname}</p>}
+           </div>
+         </div>
+
+         <div className="form-group">
+           <label htmlFor="email">Adresse mail</label>
+           <input
+             type="email"
+             name="email"
+             id="email"
+             className={errors.email ? "error" : ""}
+           />
+           {errors.email && <p className="error-text">{errors.email}</p>}
+         </div>
+
+         <div className="form-group">
+           <label htmlFor="message">Message</label>
+           <textarea
+             name="message"
+             id="message"
+             rows="5"
+             className={errors.message ? "error" : ""}
+           />
+           {errors.message && <p className="error-text">{errors.message}</p>}
+         </div>
 
         <button type="submit" className="contact-btn">
           {cms.buttonText}
