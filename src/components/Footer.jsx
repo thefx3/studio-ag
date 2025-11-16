@@ -155,11 +155,10 @@ function Footer() {
 
       <div className="footer-bottom">
         <div className="footer-socials">
-          {data.socials.map(s => (
-            <a key={s.label} href={s.url} target="_blank">
-              <img src={/* tu peux laisser tes icônes statiques */ insta} className="social-icon" />
-            </a>
-          ))}
+                 <img src={insta} alt="Instagram" className="social-icon" />
+                 <img src={thread} alt="Threads" className="social-icon" />
+                 <img src={twitter} alt="X" className="social-icon" />
+                 <img src={youtube} alt="YouTube" className="social-icon" />
         </div>
 
         <div className="footer-bottomright">
