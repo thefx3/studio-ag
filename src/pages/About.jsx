@@ -84,6 +84,8 @@ import { client } from "../sanityClient";
 import { urlFor } from "../sanityImage";
 import { useEffect, useState } from "react";
 import { Button_contact } from "../components/Button";
+import aldric from "../images/aldric.png";
+import aldric2 from "../images/aldric-2.png";
 
 function About() {
   const [data, setData] = useState(null);
@@ -119,13 +121,19 @@ function About() {
               <p key={i}>{p}</p>
             ))}
           </div>
-          <img src={urlFor(data.imageMain).url()} alt="Portrait" />
+          <img
+            src={data.imageMain ? urlFor(data.imageMain).url() : aldric}
+            alt="Portrait"
+          />
         </div>
 
         <hr />
 
         <div className="about-content2">
-          <img src={urlFor(data.imageSecondary).url()} alt="Portrait" />
+          <img
+            src={data.imageSecondary ? urlFor(data.imageSecondary).url() : aldric2}
+            alt="Portrait"
+          />
 
           <div className="container-content2">
             <p>{data.secondaryParagraph}</p>

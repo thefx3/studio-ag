@@ -61,7 +61,7 @@ function Services() {
         </div>
 
         <img
-          src={urlFor(data.image).url()}
+          src={image}
           alt="Image Studio AG"
           className="services-image"
         />
@@ -93,7 +93,7 @@ function Services() {
                 {data.serviceCards.map((card) => (
                     <Cards
                     key={card.title}
-                    logo={urlFor(card.icon).url()}
+                    logo={card.icon ? urlFor(card.icon).url() : vector}
                     title={card.title}
                     description={card.description}
                     />
