@@ -25,6 +25,8 @@ function Services() {
           ctaLabel
         }`).then(setData);
       }, []);
+
+      if (!data) return <p>Chargement...</p>;
       
 
 
@@ -32,7 +34,7 @@ function Services() {
         <div className="services-page">
 
 
-            <div className="services-top">
+            {/* <div className="services-top">
                 <div className="services-text">
                     <p className="services-title">Services et Tarifs</p>
                     <h2 className="services-subtitle">Votre musique, <br></br>perfectionnée.</h2>
@@ -41,15 +43,33 @@ function Services() {
                     l'attention des auditeurs et les maintient engagés.
                     Un mixage soigné qui sonne bien partout, des AirPods aux stades.</p>
                 </div>
-                    {/* <img src={image} alt="Image Studio AG" /> */}
-                    <img src={urlFor(data.image).url()} alt="Service" />
+                    <img src={image} alt="Image Studio AG" />
+            </div> */}
 
+            <div className="services-top">
+        <div className="services-text">
+          <p className="services-title">{data.title}</p>
+          <h2 className="services-subtitle">
+            {data.subtitle.split("<br/>").map((line, i) => (
+              <span key={i}>
+                {line}
+                <br />
+              </span>
+            ))}
+          </h2>
+          <p className="services-p">{data.description}</p>
+        </div>
 
-            </div>
+        <img
+          src={urlFor(data.image).url()}
+          alt="Image Studio AG"
+          className="services-image"
+        />
+      </div>
 
-            <div className="services-bottom">
+            {/* <div className="services-bottom">
                 <div className="container-cards">
-                    {/* <Cards 
+                    <Cards 
                         logo={vector}
                         title="Editing"
                         description="Vous venez d'enregistrer votre projet et avez besoin d'un nettoyage des prises, remise en phase ou bien une balance des niveaux ?
@@ -64,18 +84,20 @@ function Services() {
                         logo={vol}
                         title="Mastering"
                         description="Indispensable, le mastering est la dernière couche de vernis, la cerise sur la gâteau qui donnera une cohérence entre vos titres. Il permettra à votre projet d'être compétitif en s'alignant avec les standards de l'industrie musicale."
-                    /> */}
+                    />         
+                </div>
+            </div> */}
 
-data.serviceCards.map(card => (
-  <Cards 
-    key={card.title}
-    logo={urlFor(card.icon).url()}
-    title={card.title}
-    description={card.description}
-  />
-))
-
-                    
+            <div className="services-bottom">
+                <div className="container-cards">
+                {data.serviceCards.map((card) => (
+                    <Cards
+                    key={card.title}
+                    logo={urlFor(card.icon).url()}
+                    title={card.title}
+                    description={card.description}
+                    />
+                ))}
                 </div>
             </div>
 

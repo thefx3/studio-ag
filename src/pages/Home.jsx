@@ -24,6 +24,8 @@ function Home () {
       })
       .catch((err) => console.error("SANITY ERROR: ", err));
   }, []);
+
+  if (!data) return <p>Chargement...</p>;
   
   // 
 

@@ -35,6 +35,8 @@ function Header() {
   const isContactPage = location.pathname === "/contact";
   const isHomePage = location.pathname === "/";
 
+  if (!nav) return <header className="header">Chargement...</header>;
+
   return (
     <header className="header">
 

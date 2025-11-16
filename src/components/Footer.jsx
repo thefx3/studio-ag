@@ -23,6 +23,8 @@ function Footer () {
     }`).then(setFooterData);
     }, []);
 
+    if (!data) return <p>Chargement...</p>;
+
   return (
     <footer className="footer">
         
@@ -34,9 +36,8 @@ function Footer () {
                     <p>Professional mixing and mastering studio dedicated to helping artists overcome
                     the frustration of unpolished, unbalanced, or lifeless mixes.
                     </p> */}
-
-                    {footerData && footerData.brandName}
-                    {footerData && footerData.description}
+                    <p>{data.brandName}</p>
+                    <p>{data.description}</p>
                 </div>
             </div>
 
@@ -73,17 +74,29 @@ function Footer () {
 
         <div className="footer-bottom">
             <div className="footer-socials">
-                <img src={insta} alt="Instagram" className="social-icon" />
+                {/* <img src={insta} alt="Instagram" className="social-icon" />
                 <img src={thread} alt="Threads" className="social-icon" />
                 <img src={twitter} alt="X" className="social-icon" />
-                <img src={youtube} alt="YouTube" className="social-icon" />
+                <img src={youtube} alt="YouTube" className="social-icon" /> */}
+
+                {data.socials.map(s => (
+                    <a key={s.label} href={s.url} target="_blank">
+                    <img src={/* tu peux laisser tes icônes statiques */ insta} className="social-icon" />
+                    </a>
+                ))}
             </div>
 
             <div className="footer-bottomright">
                 <ul className="footer-links">
-                    <li><a href="#">Privacy Policy</a></li>
+                    {/* <li><a href="#">Privacy Policy</a></li>
                     <li><a href="#">Terms of Service</a></li>
-                    <li><a href="#">Cookies Setting</a></li>
+                    <li><a href="#">Cookies Setting</a></li> */}
+
+                     {data.legalLinks.map(l => (
+                    <li key={l.label}>
+                        <a href={l.href}>{l.label}</a>
+                    </li>
+                    ))}
                 </ul>
             </div>
 
