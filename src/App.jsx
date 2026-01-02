@@ -1,5 +1,5 @@
-import { BrowserRouter as Router, Routes, Route, useLocation, Navigate } from "react-router-dom";
-import React, { useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import React from "react";
 import Header from "./components/Header";
 import Home from "./pages/Home";
 import Services from "./pages/Services";
@@ -10,29 +10,9 @@ import Contact from "./pages/Contact";
 import Space from "./components/Space";
 import "./App.css";
 
-function ScrollToHash() {
-  const { pathname, hash } = useLocation();
-
-  useEffect(() => {
-    if (pathname !== "/") return;
-
-    if (hash) {
-      const id = hash.replace("#", "");
-      const el = document.getElementById(id);
-      if (el) {
-        // Use smooth scroll to match the request
-        el.scrollIntoView({ behavior: "smooth" });
-      }
-    }
-  }, [hash, pathname]);
-
-  return null;
-}
-
 function App() {
   return (
     <Router>
-      <ScrollToHash />
       <Header />
       <Routes>
         <Route
@@ -45,7 +25,20 @@ function App() {
             </>
           }
         />
-        <Route path="/services" element={<Navigate to="/#services" replace />} />
+
+        {/* 📩 Page contact séparée */}
+        <Route path="/" element={<Home />} />
+
+        <Route
+          path="/services"
+          element={
+            <>
+              <Space height={"15vh"} />
+              <Services />
+              <Footer />
+            </>
+          }
+        />
         <Route
           path="/studio"
           element={

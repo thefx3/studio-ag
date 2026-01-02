@@ -32,13 +32,8 @@ export default function Button({ text, to }) {
 
 // 🔹 Bouton de lien externe ou page séparée
 export function Button2({ text, to }) {
-  const isServicesLink = ["/services", "services", "#services"].includes(
-    (to || "").toString().toLowerCase()
-  );
-  const resolvedTo = isServicesLink ? "/#services" : to;
-
   return (
-    <Link to={resolvedTo} className="nav-button">
+    <Link to={to} className="nav-button">
       {text}
     </Link>
   );
