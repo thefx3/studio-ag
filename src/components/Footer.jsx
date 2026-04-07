@@ -1,8 +1,6 @@
 
-
 import "./Footer.css";
 import Footersection from "./Footer-section";
-import "./Footer.css";
 import logo from "../images/logo2.png";
 import insta from "../images/insta.png";
 import thread from "../images/@.png";
@@ -11,6 +9,14 @@ import youtube from "../images/youtube.png";
 
 import { client } from "../sanityClient";
 import { useEffect, useState } from "react";
+
+const socialIcons = {
+  instagram: { src: insta, alt: "Instagram" },
+  threads: { src: thread, alt: "Threads" },
+  x: { src: twitter, alt: "X" },
+  twitter: { src: twitter, alt: "X" },
+  youtube: { src: youtube, alt: "YouTube" },
+};
 
 function Footer() {
   const [data, setData] = useState(null);
@@ -32,6 +38,18 @@ function Footer() {
   // Sanity may return null arrays; default to empty lists to keep the UI rendering.
   const columns = data.columns || [];
   const legalLinks = data.legalLinks || [];
+  const socials = (data.socials || [])
+    .map((social) => {
+      const icon = socialIcons[social.label?.trim().toLowerCase()];
+      if (!icon) return null;
+
+      return {
+        ...icon,
+        label: social.label,
+        url: social.url,
+      };
+    })
+    .filter(Boolean);
 
   return (
     <footer className="footer">
@@ -60,10 +78,17 @@ function Footer() {
 
       <div className="footer-bottom">
         <div className="footer-socials">
-                 <img src={insta} alt="Instagram" className="social-icon" />
-                 <img src={thread} alt="Threads" className="social-icon" />
-                 <img src={twitter} alt="X" className="social-icon" />
-                 <img src={youtube} alt="YouTube" className="social-icon" />
+          {socials.map((social) => (
+            <a
+              key={social.url}
+              href={social.url}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={social.label}
+            >
+              <img src={social.src} alt={social.alt} className="social-icon" />
+            </a>
+          ))}
         </div>
 
         <div className="footer-bottomright">

@@ -3,7 +3,7 @@
     flex-direction: column;
     width: 100vw;
 
-    background: url('/public/home-image.png');
+    background: url('/home-image.png');
     background-size: cover;
     color: var(--color-white);
 
@@ -35,4 +35,3 @@ hr {
     margin-top: var(--gap-60);
     margin-bottom: var(--gap-60);
 }
-
