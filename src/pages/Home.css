@@ -1,7 +1,7 @@
 .home-page {
     display: flex;
     flex-direction: column;
-    width: 100vw;
+    width: 100%;
 
     background: url('/home-image.png');
     background-size: cover;
@@ -9,7 +9,7 @@
 
     padding: var(--border-padding);
     gap: var(--gap-20);
-    margin-bottom: var(--gap-80);
+    margin-bottom: var(--gap-40);
 
 
     h1 {
@@ -25,6 +25,13 @@
         line-height: 1.4;
     }
 
+}
+
+.home-cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gap-16);
+    align-items: center;
 }
 
 

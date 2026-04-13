@@ -72,6 +72,7 @@ body {
   background-color: var(--color-dark-accent0);
   color: var(--color-white);
   min-height: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -102,7 +103,11 @@ body {
         url('./assets/fonts/Inter-Bold.ttf') format('truetype');
 }
 
-.home-page .contact-button, .services-page .contact-button, .about-content .contact-button {
+.home-page .contact-button,
+.home-page .booking-button,
+.services-page .contact-button,
+.services-page .booking-button,
+.about-content .contact-button {
   padding: var(--gap-8) var(--gap-16);
 }
 

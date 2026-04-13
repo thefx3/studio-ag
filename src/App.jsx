@@ -44,6 +44,7 @@ function App() {
             <>
               <div id="home"><Home /></div>
               <div id="services"><Services /></div>
+              <Space height={"15vh"} />
               <div id="footer"><Footer /></div>
             </>
           }

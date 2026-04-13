@@ -9,12 +9,18 @@
     flex-direction: column;
 
     padding: var(--border-padding);
-    margin-bottom: var(--gap-60);
 
-    .contact-button {
+    .contact-button,
+    .booking-button {
         align-self: center;
-        
     }
+}
+
+.services-cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--gap-16);
 }
 .services-top {
     display: grid;
@@ -100,4 +106,3 @@
 .services-bottom {
     margin-bottom: clamp(0.5rem, 5vh, 5rem);
 }
-

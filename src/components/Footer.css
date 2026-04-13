@@ -2,7 +2,7 @@
     color: var(--color-white);
     padding: var(--border-padding);
     font-family: "Inter", sans-serif;
-    margin-bottom: var(--gap-40);
+    margin-bottom: var(--gap-12);
 }
 
 .footer-top {
@@ -10,7 +10,7 @@
     flex-flow: row wrap;
     justify-content: space-between;
     align-items: flex-start;
-    margin-bottom: var(--gap-40);
+    margin-bottom: var(--gap-20);
     gap: var(--gap-24);
 }
 
@@ -71,7 +71,11 @@
     align-items: center;
     gap: var(--gap-20);
     justify-content: space-between;
+}
 
+.footer hr {
+    margin-top: var(--gap-20);
+    margin-bottom: var(--gap-20);
 }
 
 .footer-socials {

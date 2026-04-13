@@ -1,9 +1,10 @@
 // /src/Home.jsx
 import "./Home.css";
-import { Button_contact } from "../components/Button";
+import { Button_booking, Button_contact } from "../components/Button";
 import Space from "../components/Space";
 import { useState, useEffect } from "react";
 import { client } from "../sanityClient";
+import { GOOGLE_BOOKING_URL } from "../constants/booking";
 
 const query = `*[_type == "homePage"][0]{
   titleLine1,
@@ -44,7 +45,10 @@ function Home () {
 
         <p>{data.description}</p>
 
-        <Button_contact text={data.ctaLabel} to="/contact" />
+        <div className="home-cta-row">
+          <Button_contact text={data.ctaLabel} to="/contact" />
+          <Button_booking text="Reserver un appel" to={GOOGLE_BOOKING_URL} />
+        </div>
 
         <hr />
       </>

@@ -1,11 +1,12 @@
 import "./Services.css";
-import { Button_contact } from "../components/Button";
+import { Button_booking, Button_contact } from "../components/Button";
 import Cards from "../components/Services-cards";
 import image from "../images/services-image.png";
 import vector from "../images/vector.png";
 import { client } from "../sanityClient";
 import { urlFor } from "../sanityImage";
 import { useEffect, useState } from "react";
+import { GOOGLE_BOOKING_URL } from "../constants/booking";
 
 
 function Services() {
@@ -63,7 +64,10 @@ function Services() {
                 </div>
             </div>
 
-            <Button_contact text={data.ctaLabel} to="/contact" />
+            <div className="services-cta-row">
+              <Button_contact text={data.ctaLabel} to="/contact" />
+              <Button_booking text="Reserver un appel" to={GOOGLE_BOOKING_URL} />
+            </div>
 
         </div>
     )

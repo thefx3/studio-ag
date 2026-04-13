@@ -4,6 +4,58 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useCallback, useEffect } from "react";
 import "./Button.css";
 
+function useSectionNavigation(to) {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const normalizedTo = (to || "").toString().trim();
+  const lowerTo = normalizedTo.toLowerCase();
+
+  let sectionId = null;
+  if (["/services", "services", "#services"].includes(lowerTo)) {
+    sectionId = "services";
+  } else if (normalizedTo.startsWith("/#")) {
+    sectionId = normalizedTo.slice(2);
+  } else if (normalizedTo.startsWith("#")) {
+    sectionId = normalizedTo.slice(1);
+  }
+
+  const resolvedTo = sectionId ? `/#${sectionId}` : to;
+
+  const scrollToSection = useCallback(() => {
+    if (!sectionId) return false;
+
+    const section = document.getElementById(sectionId);
+    if (!section) return false;
+
+    section.scrollIntoView({ behavior: "smooth" });
+    return true;
+  }, [sectionId]);
+
+  const handleClick = useCallback(
+    (e) => {
+      if (!sectionId) return;
+
+      e.preventDefault();
+
+      if (location.pathname === "/") {
+        scrollToSection();
+        window.history.replaceState(null, "", `/#${sectionId}`);
+        return;
+      }
+
+      navigate(`/#${sectionId}`);
+      [30, 80, 150].forEach((delay) => {
+        setTimeout(() => {
+          scrollToSection();
+        }, delay);
+      });
+    },
+    [location.pathname, navigate, scrollToSection, sectionId]
+  );
+
+  return { resolvedTo, handleClick };
+}
+
 // 🔹 Bouton de navigation interne (scroll)
 export default function Button({ text, to }) {
   const location = useLocation();
@@ -32,41 +84,7 @@ export default function Button({ text, to }) {
 
 // 🔹 Bouton de lien externe ou page séparée
 export function Button2({ text, to }) {
-  const location = useLocation();
-  const navigate = useNavigate();
-  const normalizedTo = (to || "").toString().toLowerCase();
-  const isServicesLink = ["/services", "services", "#services"].includes(normalizedTo);
-  const resolvedTo = isServicesLink ? "/#services" : to;
-
-  const scrollToServices = () => {
-    const section = document.getElementById("services");
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-      return true;
-    }
-    return false;
-  };
-
-  const handleClick = (e) => {
-    if (!isServicesLink) return;
-
-    e.preventDefault();
-
-    // Si on est déjà sur la home, scroll directement sans recharger la page
-    if (location.pathname === "/") {
-      scrollToServices();
-      return;
-    }
-
-    // Sinon, navigation vers la home avec hash ; on force un scroll après navigation au cas où
-    navigate(resolvedTo);
-    // Plusieurs tentatives pour laisser le temps au DOM de monter la section
-    [30, 80, 150].forEach((delay) => {
-      setTimeout(() => {
-        scrollToServices();
-      }, delay);
-    });
-  };
+  const { resolvedTo, handleClick } = useSectionNavigation(to);
 
   return (
     <Link to={resolvedTo} className="nav-button" onClick={handleClick}>
@@ -79,6 +97,31 @@ export function Button2({ text, to }) {
 export function Button_contact({ text, to }) {
   return (
     <Link to={to} className="contact-button nav-button">
+      {text}
+    </Link>
+  );
+}
+
+export function Button_booking({ text, to }) {
+  const isExternalUrl =
+    typeof to === "string" && /^(https?:)?\/\//i.test(to);
+  const { resolvedTo, handleClick } = useSectionNavigation(to);
+
+  if (isExternalUrl) {
+    return (
+      <a
+        href={to}
+        className="booking-button nav-button"
+        target="_blank"
+        rel="noreferrer"
+      >
+        {text}
+      </a>
+    );
+  }
+
+  return (
+    <Link to={resolvedTo} className="booking-button nav-button" onClick={handleClick}>
       {text}
     </Link>
   );
