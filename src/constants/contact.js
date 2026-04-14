@@ -1,4 +1,4 @@
-export const STUDIO_AG_INSTAGRAM_URL = "https://instagram.com/studioag";
+export const STUDIO_AG_INSTAGRAM_URL = "https://instagram.com/studioag.fr";
 
 export function resolveContactCtaUrl(destination) {
   return destination === "instagram"
