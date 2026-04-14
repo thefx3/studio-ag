@@ -33,6 +33,21 @@ export default {
         validation: (Rule) => Rule.required(),
       },
       {
+        name: "contactCtaDestination",
+        title: "Destination bouton contacter",
+        type: "string",
+        description: 'Choix de redirection pour le bouton "Contacter"',
+        initialValue: "form",
+        options: {
+          list: [
+            { title: "Formulaire de contact", value: "form" },
+            { title: "Instagram @studioag", value: "instagram" },
+          ],
+          layout: "radio",
+        },
+        validation: (Rule) => Rule.required(),
+      },
+      {
         name: "bookingCtaLabel",
         title: "Libellé bouton réservation",
         type: "string",

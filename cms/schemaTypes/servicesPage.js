@@ -73,6 +73,40 @@ const serviceCard = {
         description: 'Ex: "Contacter"',
         validation: (Rule) => Rule.required(),
       },
+      {
+        name: "contactCtaDestination",
+        title: "Destination bouton contacter",
+        type: "string",
+        description: 'Choix de redirection pour le bouton "Contacter"',
+        initialValue: "form",
+        options: {
+          list: [
+            { title: "Formulaire de contact", value: "form" },
+            { title: "Instagram @studioag", value: "instagram" },
+          ],
+          layout: "radio",
+        },
+        validation: (Rule) => Rule.required(),
+      },
+      {
+        name: "bookingCtaLabel",
+        title: "Libellé bouton réservation",
+        type: "string",
+        description: 'Ex: "Reserver un appel"',
+        initialValue: "Reserver un appel",
+        validation: (Rule) => Rule.required(),
+      },
+      {
+        name: "bookingCtaUrl",
+        title: "URL bouton réservation",
+        type: "url",
+        description: "Lien externe vers la prise de rendez-vous",
+        initialValue: "https://calendar.app.google/GPAVEbYa2TCMrVAw6",
+        validation: (Rule) =>
+          Rule.required().uri({
+            scheme: ["http", "https"],
+          }),
+      },
     ],
   };
   

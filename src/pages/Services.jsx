@@ -7,6 +7,7 @@ import { client } from "../sanityClient";
 import { urlFor } from "../sanityImage";
 import { useEffect, useState } from "react";
 import { GOOGLE_BOOKING_URL } from "../constants/booking";
+import { resolveContactCtaUrl } from "../constants/contact";
 
 
 function Services() {
@@ -19,7 +20,10 @@ function Services() {
           description,
           image,
           serviceCards[]{title, description, icon},
-          ctaLabel
+          ctaLabel,
+          contactCtaDestination,
+          bookingCtaLabel,
+          bookingCtaUrl
         }`).then(setData);
       }, []);
 
@@ -65,8 +69,14 @@ function Services() {
             </div>
 
             <div className="services-cta-row">
-              <Button_contact text={data.ctaLabel} to="/contact" />
-              <Button_booking text="Reserver un appel" to={GOOGLE_BOOKING_URL} />
+              <Button_contact
+                text={data.ctaLabel}
+                to={resolveContactCtaUrl(data.contactCtaDestination)}
+              />
+              <Button_booking
+                text={data.bookingCtaLabel || "Reserver un appel"}
+                to={data.bookingCtaUrl || GOOGLE_BOOKING_URL}
+              />
             </div>
 
         </div>

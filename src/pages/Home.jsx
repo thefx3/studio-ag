@@ -5,12 +5,14 @@ import Space from "../components/Space";
 import { useState, useEffect } from "react";
 import { client } from "../sanityClient";
 import { GOOGLE_BOOKING_URL } from "../constants/booking";
+import { resolveContactCtaUrl } from "../constants/contact";
 
 const query = `*[_type == "homePage"][0]{
   titleLine1,
   titleLine2,
   description,
   ctaLabel,
+  contactCtaDestination,
   bookingCtaLabel,
   bookingCtaUrl
 }`;
@@ -49,7 +51,10 @@ function Home () {
         <p>{data.description}</p>
 
         <div className="home-cta-row">
-          <Button_contact text={data.ctaLabel} to="/contact" />
+          <Button_contact
+            text={data.ctaLabel}
+            to={resolveContactCtaUrl(data.contactCtaDestination)}
+          />
           <Button_booking
             text={data.bookingCtaLabel || "Reserver un appel"}
             to={data.bookingCtaUrl || GOOGLE_BOOKING_URL}

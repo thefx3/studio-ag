@@ -4,6 +4,7 @@ import "./Header.css";
 
 import { client } from "../sanityClient";
 import { useEffect, useState } from "react";
+import { getContactPageType, resolveContactCtaUrl } from "../constants/contact";
 
 
 import logo from "../images/logo.png";
@@ -16,6 +17,9 @@ function Header() {
 
   //Sanity data fetching
   const [nav, setNav] = useState(null);
+  const [contactDestination, setContactDestination] = useState("form");
+
+  const location = useLocation();
 
   useEffect(() => {
     client
@@ -27,8 +31,23 @@ function Header() {
       .then(setNav);
   }, []);
 
+  useEffect(() => {
+    const pageType = getContactPageType(location.pathname);
 
-  const location = useLocation();
+    client
+      .fetch(
+        `*[_type == $pageType][0]{
+          contactCtaDestination
+        }`,
+        { pageType }
+      )
+      .then((res) => {
+        setContactDestination(res?.contactCtaDestination || "form");
+      })
+      .catch(() => {
+        setContactDestination("form");
+      });
+  }, [location.pathname]);
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
   const isContactPage = location.pathname === "/contact";
@@ -83,7 +102,12 @@ function Header() {
             <img src={send} alt="Send Logo" className="icon" />
 
             {/* <Button_contact text="Contacter" to="/contact" /> */}
-            {nav && <Button_contact text={nav.ctaLabel} to="/contact" />}
+            {nav && (
+              <Button_contact
+                text={nav.ctaLabel}
+                to={resolveContactCtaUrl(contactDestination)}
+              />
+            )}
           </nav>
         </>
       )}

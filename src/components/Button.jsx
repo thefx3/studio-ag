@@ -95,8 +95,25 @@ export function Button2({ text, to }) {
 
 // 🔹 Bouton de contact (style différent)
 export function Button_contact({ text, to }) {
+  const isExternalUrl =
+    typeof to === "string" && /^(https?:)?\/\//i.test(to);
+  const { resolvedTo, handleClick } = useSectionNavigation(to);
+
+  if (isExternalUrl) {
+    return (
+      <a
+        href={to}
+        className="contact-button nav-button"
+        target="_blank"
+        rel="noreferrer"
+      >
+        {text}
+      </a>
+    );
+  }
+
   return (
-    <Link to={to} className="contact-button nav-button">
+    <Link to={resolvedTo} className="contact-button nav-button" onClick={handleClick}>
       {text}
     </Link>
   );

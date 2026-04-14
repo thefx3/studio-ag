@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { Button_contact } from "../components/Button";
 import aldric from "../images/aldric.png";
 import aldric2 from "../images/aldric-2.png";
+import { resolveContactCtaUrl } from "../constants/contact";
 
 function About() {
   const [data, setData] = useState(null);
@@ -17,6 +18,7 @@ function About() {
         paragraphs,
         secondaryParagraph,
         ctaLabel,
+        contactCtaDestination,
         imageMain,
         imageSecondary
       }`)
@@ -56,7 +58,10 @@ function About() {
 
           <div className="container-content2">
             <p>{data.secondaryParagraph}</p>
-            <Button_contact text={data.ctaLabel} to="/contact" />
+            <Button_contact
+              text={data.ctaLabel}
+              to={resolveContactCtaUrl(data.contactCtaDestination)}
+            />
           </div>
         </div>
       </div>
