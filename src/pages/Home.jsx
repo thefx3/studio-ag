@@ -10,7 +10,9 @@ const query = `*[_type == "homePage"][0]{
   titleLine1,
   titleLine2,
   description,
-  ctaLabel
+  ctaLabel,
+  bookingCtaLabel,
+  bookingCtaUrl
 }`;
 
 function Home () {
@@ -40,14 +42,18 @@ function Home () {
     ) : (
       <>
         <h1>
-          {data.titleLine1} <br /> {data.titleLine2}
+          <span>{data.titleLine1}</span>
+          <span>{data.titleLine2}</span>
         </h1>
 
         <p>{data.description}</p>
 
         <div className="home-cta-row">
           <Button_contact text={data.ctaLabel} to="/contact" />
-          <Button_booking text="Reserver un appel" to={GOOGLE_BOOKING_URL} />
+          <Button_booking
+            text={data.bookingCtaLabel || "Reserver un appel"}
+            to={data.bookingCtaUrl || GOOGLE_BOOKING_URL}
+          />
         </div>
 
         <hr />
